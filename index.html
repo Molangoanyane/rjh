@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,14 +94,61 @@
     }
     iframe {
       width: 100%;
-      height: 800px;
+      height: 1000px;
       border: none;
     }
     @media (max-width: 600px) {
       iframe {
-        height: 1000px;
+        height: 1200px;
       }
     }
+    .logo {
+      width: 100%;
+      text-align: center;
+    }
+    .logo > img {
+      width: 200px;
+      border: 5px solid #f5a623;
+      border-radius: 100%;
+    }
+    .spo {
+      width: fit-content;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .spo > img {
+      width: 200px;
+      display: inline-block;
+      border: 3px solid #004aad;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    /* Spin animation for logo */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .logo > img:hover {
+      animation: spin 2s linear infinite;
+    }
+
+    /* Shake animation */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-3px); }
+      40% { transform: translateX(3px); }
+      60% { transform: translateX(-3px); }
+      80% { transform: translateX(3px); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Apply shake effect on hover to rc.webp and t10.webp */
+    .spo > img[src*="rc.webp"]:hover,
+    .spo > img[src*="t10.webp"]:hover {
+      animation: shake 0.5s ease-in-out infinite;
+    }
+
   </style>
 </head>
 <body>
@@ -186,6 +232,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Replace the src below with your real Google Form embed URL -->
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7MGsEll4m0Wp8bYWxao96zloDyOt8ohyh6o4stx2GiS4bSw/viewform?embedded=true" width="640" height="981" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+
+  <div class="container">
+    <h2>Brought to you by:</h2>
+    <div class="logo">
+      <img src="logo.webp">
+    </div>
+    <h2>In association with:</h2>
+    <div class="spo">
+      <img src="t10.webp">
+      <img src="rc.webp">
+    </div>
   </div>
 </body>
 </html>
